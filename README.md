@@ -26,7 +26,6 @@ Objective: Turn 278,000+ rows of raw delivery-level data into a decision-ready, 
 
 ## 📂 Repository Structure
 
-
 IPL-Analysis-Dashboard/
 ├── IPL_Analysis_Dashboard.pbix     # Power BI report file (data model + visuals)
 ├── IPL data/
@@ -34,7 +33,8 @@ IPL-Analysis-Dashboard/
 │   ├── ipl_matches_data.csv        # 1,169 rows — match-level results
 │   ├── players-data-updated.csv    # 772 rows — player profiles
 │   └── teams_data.csv              # 16 rows — franchise info
-|   ├── Images Used 
+├── Images Used/
+│   └── (dashboard Images)
 └── README.md
 
 ---
@@ -48,7 +48,7 @@ IPL-Analysis-Dashboard/
 | `players-data-updated` | 772 | One row per player | batting/bowling style, fielding position, images |
 | `teams_data` | 16 | One row per franchise | team name, short code, logo URL |
 
-Data model relationships:
+**Data model relationships:**
 - `ball_by_ball_data[match_id]` → `ipl_matches_data[match_id]` (many-to-one)
 - `ipl_matches_data[player_of_match]` → `players-data-updated[player_id]` (many-to-one)
 - `ipl_matches_data[team1]`, `[team2]`, `[match_winner]` → `teams_data[team_name]` (many-to-one; `USERELATIONSHIP` used in DAX since a team name plays two roles per match)
